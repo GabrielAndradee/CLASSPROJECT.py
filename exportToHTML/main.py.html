@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">Account:</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">name=</span><span class="s2">&quot;&quot;</span><span class="s0">, </span><span class="s1">balance=</span><span class="s3">0</span><span class="s1">):</span>
+        <span class="s1">self.name = name</span>
+        <span class="s1">self.balance = balance</span>
+
+    <span class="s0">def </span><span class="s1">get_name(self):</span>
+        <span class="s0">return </span><span class="s1">self.name</span>
+
+    <span class="s0">def </span><span class="s1">set_name(self</span><span class="s0">, </span><span class="s1">new_name):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_name</span><span class="s0">, </span><span class="s1">str) </span><span class="s0">and </span><span class="s1">len(new_name) &gt;= </span><span class="s3">3</span><span class="s1">:</span>
+            <span class="s1">self.name = new_name</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;-Error: invalid type.&quot;</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">get_balance(self):</span>
+        <span class="s0">return </span><span class="s1">self.balance</span>
+
+    <span class="s0">def </span><span class="s1">set_balance(self</span><span class="s0">, </span><span class="s1">new_balance):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_balance</span><span class="s0">, </span><span class="s1">float):</span>
+            <span class="s1">self.balance = new_balance</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;-Error: invalid type.&quot;</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">__str__(self):</span>
+        <span class="s0">return </span><span class="s2">f&quot;Name: </span><span class="s0">{</span><span class="s1">self.name</span><span class="s0">} </span><span class="s2">- Balance: $</span><span class="s0">{</span><span class="s1">self.balance</span><span class="s0">:</span><span class="s2">.2f</span><span class="s0">}</span><span class="s2">&quot;</span>
+
+<span class="s0">class </span><span class="s1">ICA(Account):</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">name=</span><span class="s2">&quot;&quot;</span><span class="s0">, </span><span class="s1">balance=</span><span class="s3">0</span><span class="s0">, </span><span class="s1">gender=</span><span class="s2">&quot;&quot;</span><span class="s0">, </span><span class="s1">ssn=</span><span class="s2">&quot;&quot;</span><span class="s1">):</span>
+        <span class="s1">super().__init__(name</span><span class="s0">, </span><span class="s1">balance)</span>
+        <span class="s1">self.gender = gender</span>
+        <span class="s1">self.ssn = ssn</span>
+
+    <span class="s0">def </span><span class="s1">get_gender(self):</span>
+        <span class="s0">return </span><span class="s1">self.gender</span>
+
+    <span class="s0">def </span><span class="s1">set_gender(self</span><span class="s0">, </span><span class="s1">new_gender):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_gender</span><span class="s0">, </span><span class="s1">str) </span><span class="s0">and </span><span class="s1">len(new_gender) &gt;= </span><span class="s3">1</span><span class="s1">:</span>
+            <span class="s1">self.gender = new_gender</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;Invalid input.&quot;</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">get_ssn(self):</span>
+        <span class="s0">return </span><span class="s1">self.ssn</span>
+
+    <span class="s0">def </span><span class="s1">set_ssn(self</span><span class="s0">, </span><span class="s1">new_ssn):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_ssn</span><span class="s0">, </span><span class="s1">str) </span><span class="s0">and </span><span class="s1">len(new_ssn) == </span><span class="s3">9</span><span class="s1">:</span>
+            <span class="s1">self.ssn = new_ssn</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;Invalid input.&quot;</span><span class="s1">)</span>
+
+<span class="s0">class </span><span class="s1">BCA(Account):</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">name=</span><span class="s2">&quot;&quot;</span><span class="s0">, </span><span class="s1">balance=</span><span class="s3">0</span><span class="s0">, </span><span class="s1">modality=</span><span class="s2">&quot;&quot;</span><span class="s0">, </span><span class="s1">ein=</span><span class="s2">&quot;&quot;</span><span class="s1">):</span>
+        <span class="s1">super().__init__(name</span><span class="s0">, </span><span class="s1">balance)</span>
+        <span class="s1">self.modality = modality</span>
+        <span class="s1">self.ein = ein</span>
+
+    <span class="s0">def </span><span class="s1">get_modality(self):</span>
+        <span class="s0">return </span><span class="s1">self.modality</span>
+
+    <span class="s0">def </span><span class="s1">set_modality(self</span><span class="s0">, </span><span class="s1">new_modality):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_modality</span><span class="s0">, </span><span class="s1">str) </span><span class="s0">and </span><span class="s1">len(new_modality) &gt;= </span><span class="s3">1</span><span class="s1">:</span>
+            <span class="s1">self.modality = new_modality</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;Invalid input.&quot;</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">get_ein(self):</span>
+        <span class="s0">return </span><span class="s1">self.ein</span>
+
+    <span class="s0">def </span><span class="s1">set_ein(self</span><span class="s0">, </span><span class="s1">new_ein):</span>
+        <span class="s0">if </span><span class="s1">isinstance(new_ein</span><span class="s0">, </span><span class="s1">str) </span><span class="s0">and </span><span class="s1">len(new_ein) == </span><span class="s3">9</span><span class="s1">:</span>
+            <span class="s1">self.ein = new_ein</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s2">&quot;Invalid input.&quot;</span><span class="s1">)</span>
+
+<span class="s0">if </span><span class="s1">__name__ == </span><span class="s2">'__main__'</span><span class="s1">:</span>
+    <span class="s1">acc = Account(</span><span class="s2">'Alice'</span><span class="s1">)</span>
+    <span class="s1">print(acc)</span>
+    <span class="s1">print(</span><span class="s2">'-Superclass:</span><span class="s0">\n</span><span class="s2">Name:'</span><span class="s0">, </span><span class="s1">acc.get_name())</span>
+    <span class="s1">print(</span><span class="s2">'Balance:'</span><span class="s0">, </span><span class="s1">acc.get_balance())</span>
+    <span class="s1">acc.set_name(</span><span class="s2">'Emily'</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s2">&quot;Different name:&quot;</span><span class="s0">, </span><span class="s1">acc.get_name())</span>
+    <span class="s1">print(acc.__str__())</span>
+    <span class="s1">ica1 = ICA(</span><span class="s2">'Ana'</span><span class="s0">, </span><span class="s3">3000.0</span><span class="s0">, </span><span class="s2">'F'</span><span class="s0">, </span><span class="s2">'1234'</span><span class="s1">)</span>
+    <span class="s1">print(ica1)</span>
+    <span class="s1">print(</span><span class="s2">' - ICA 1:</span><span class="s0">\n</span><span class="s2">Name:'</span><span class="s0">, </span><span class="s1">ica1.get_name())</span>
+    <span class="s1">print(</span><span class="s2">&quot;Balance:&quot;</span><span class="s0">, </span><span class="s1">ica1.get_balance())</span>
+    <span class="s1">ica2 = ICA(</span><span class="s2">'Ailton'</span><span class="s0">, </span><span class="s3">7000.0</span><span class="s1">)</span>
+    <span class="s1">print(ica2)</span>
+    <span class="s1">print(</span><span class="s2">' - ICA 2:</span><span class="s0">\n</span><span class="s2">Name:'</span><span class="s0">, </span><span class="s1">ica2.get_name())</span>
+    <span class="s1">print(</span><span class="s2">&quot;Balance:&quot;</span><span class="s0">, </span><span class="s1">ica2.get_balance())</span>
+    <span class="s1">print(</span><span class="s2">&quot;SSN:&quot;</span><span class="s0">, </span><span class="s1">ica2.get_ssn())</span>
+    <span class="s1">ica2.set_ssn(</span><span class="s2">'123456789'</span><span class="s1">)</span>
+    <span class="s1">print(</span><span class="s2">&quot;Different SSN:&quot;</span><span class="s0">, </span><span class="s1">ica2.get_ssn())</span>
+    <span class="s1">print(</span><span class="s2">&quot;Output using Python's vars and __dict__ functions:&quot;</span><span class="s1">)</span>
+    <span class="s1">print(vars(ica2))</span>
+    <span class="s1">print(ica2.__dict__)</span></pre>
+</body>
+</html>
